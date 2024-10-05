@@ -18,7 +18,10 @@ app.use(cors());
 app.use('/api/users', require('./routes/userRoutes'));
 
 ///
-
+app.get('/', async (req, res) => {
+  console.log("Server is running");
+  res.send("Server is running"); // Send a response to the client
+});
 
 app.post('/employee/:id', async (req, res) => {
   const { id } = req.params;
