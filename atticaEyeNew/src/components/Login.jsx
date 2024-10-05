@@ -15,20 +15,36 @@ const Login = ({ navigation }) => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(`${BASE_URL}/api/users/login`, { employeeId, password });
+      
+      // Log the entire response to check its structure
+      console.log('Login Response:', response.data);
+  
       if (response.status === 200) {
         await AsyncStorage.setItem('employeeId', employeeId);
-        console.log('Employee ID saved:', employeeId); 
+        
+        // Check if name and mobileNumber are defined before storing
+        const name = response.data.name || ''; // Default to empty string if undefined
+        const mobileNumber = response.data.mobileNumber || ''; // Default to empty string if undefined
+  
+        await AsyncStorage.setItem('name', name);
+        await AsyncStorage.setItem('mobileNumber', mobileNumber);
+  
+        console.log('Employee ID saved:', employeeId);
+        console.log('Name saved:', name);
+        console.log('Mobile Number saved:', mobileNumber);
+        
         Alert.alert('Login successful');
-        navigation.navigate('Home'); // Navigate to Home screen
+        navigation.navigate('HomePage'); // Navigate to Home screen
       } else {
         Alert.alert('Login failed', 'Invalid credentials');
       }
     } catch (error) {
-      // Handle error
       console.error('Login error:', error);
       Alert.alert('Login failed', error.response?.data?.message || 'An error occurred');
     }
   };
+  
+  
   
 
   return (

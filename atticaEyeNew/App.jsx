@@ -52,49 +52,49 @@ const App = () => {
         requestPermissions();
     }, [navigation]);
 
-    const fetchCallLogs = async () => {
-        try {
-            const logs = await CallLogs.loadAll(); // Fetch all call logs
-            console.log('Fetched call logs:', JSON.stringify(logs, null, 2)); // Debugging line to inspect structure
-            if (Array.isArray(logs)) {
-                setCallLogs(logs);
-            } else {
-                throw new Error('Fetched data is not an array');
-            }
-        } catch (error) {
-            console.log('Error fetching call logs:', error);
-            Alert.alert('Error', 'Could not fetch call logs. Please try again later.');
-        }
-    };
+    // const fetchCallLogs = async () => {
+    //     try {
+    //         const logs = await CallLogs.loadAll(); // Fetch all call logs
+    //         console.log('Fetched call logs:', JSON.stringify(logs, null, 2)); // Debugging line to inspect structure
+    //         if (Array.isArray(logs)) {
+    //             setCallLogs(logs);
+    //         } else {
+    //             throw new Error('Fetched data is not an array');
+    //         }
+    //     } catch (error) {
+    //         console.log('Error fetching call logs:', error);
+    //         Alert.alert('Error', 'Could not fetch call logs. Please try again later.');
+    //     }
+    // };
 
-    const fetchMessages = async () => {
-        try {
-          // Define filters for messages you want to retrieve
-          const filter = {
-            box: 'inbox', // 'inbox' (for received SMS), 'sent' (for sent SMS), etc.
-            read: 1,      // 0 for unread SMS, 1 for read SMS
-            indexFrom: 0, // Start from the first SMS
-            maxCount: 10, // Maximum number of SMS to fetch
-          };
+    // const fetchMessages = async () => {
+    //     try {
+    //       // Define filters for messages you want to retrieve
+    //       const filter = {
+    //         box: 'inbox', // 'inbox' (for received SMS), 'sent' (for sent SMS), etc.
+    //         read: 1,      // 0 for unread SMS, 1 for read SMS
+    //         indexFrom: 0, // Start from the first SMS
+    //         maxCount: 10, // Maximum number of SMS to fetch
+    //       };
       
-          // Fetch messages
-          SmsAndroid.list(
-            JSON.stringify(filter), // Convert filter object to JSON string
-            (fail) => {
-              console.log('Failed to fetch messages:', fail);
-              Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
-            },
-            (count, smsList) => {
-              const parsedMessages = JSON.parse(smsList); // Parse the SMS list
-              console.log('Fetched SMS messages:', parsedMessages); // Debugging log to inspect structure
-              setMessages(parsedMessages); // Assuming you have a useState for messages
-            }
-          );
-        } catch (error) {
-          console.log('Error fetching SMS messages:', error);
-          Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
-        }
-      };
+    //       // Fetch messages
+    //       SmsAndroid.list(
+    //         JSON.stringify(filter), // Convert filter object to JSON string
+    //         (fail) => {
+    //           console.log('Failed to fetch messages:', fail);
+    //           Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
+    //         },
+    //         (count, smsList) => {
+    //           const parsedMessages = JSON.parse(smsList); // Parse the SMS list
+    //           console.log('Fetched SMS messages:', parsedMessages); // Debugging log to inspect structure
+    //           setMessages(parsedMessages); // Assuming you have a useState for messages
+    //         }
+    //       );
+    //     } catch (error) {
+    //       console.log('Error fetching SMS messages:', error);
+    //       Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
+    //     }
+    //   };
     
 
     return (

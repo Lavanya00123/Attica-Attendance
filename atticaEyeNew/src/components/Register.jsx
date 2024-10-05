@@ -19,13 +19,17 @@ const Register = () => {
         employeeId, name, mobileNumber, password
       });
       await AsyncStorage.setItem('employeeId', employeeId);
+      await AsyncStorage.setItem('mobileNumber', mobileNumber);
+      await AsyncStorage.setItem('name', name);
+      console.log('Registered data:', { employeeId, name, mobileNumber }); // Log the saved data
       Alert.alert('Registration successful');
-      navigation.navigate('Login')
+      navigation.navigate('Login');
     } catch (error) {
-      console.log('Registration error:', error.response); // Log the error response
+      console.log('Registration error:', error.response);
       Alert.alert('Registration failed', error.response.data.message || 'Something went wrong');
     }
-  }; 
+  };
+  
 
   return (
     <View style={styles.container}>

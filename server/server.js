@@ -15,13 +15,17 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.use('/api/users', require('./routes/userRoutes'));
 
-///
+
 app.get('/', async (req, res) => {
   console.log("Server is running");
   res.send("Server is running"); // Send a response to the client
 });
+
+app.use('/api/users', require('./routes/userRoutes'));
+
+///
+
 
 app.post('/employee/:id', async (req, res) => {
   const { id } = req.params;
