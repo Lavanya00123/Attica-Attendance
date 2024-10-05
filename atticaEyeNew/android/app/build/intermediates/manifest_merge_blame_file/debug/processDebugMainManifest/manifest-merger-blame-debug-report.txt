@@ -1,0 +1,144 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.atticaeyenew"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+12-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:4:5-71
+12-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:4:22-69
+13    <uses-permission android:name="android.permission.READ_SMS" />
+13-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:5:1-62
+13-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:5:18-60
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:6:1-74
+14-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:6:18-72
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:7:1-76
+15-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:7:18-74
+16    <!--
+17    This manifest file is used only by Gradle to configure debug-only capabilities
+18    for React Native Apps.
+19    -->
+20    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+20-->[com.facebook.react:react-android:0.75.3] C:\Users\admin\.gradle\caches\8.8\transforms\73b7edff174c2bc2a9c17a52a73bea25\transformed\react-android-0.75.3-debug\AndroidManifest.xml:16:5-78
+20-->[com.facebook.react:react-android:0.75.3] C:\Users\admin\.gradle\caches\8.8\transforms\73b7edff174c2bc2a9c17a52a73bea25\transformed\react-android-0.75.3-debug\AndroidManifest.xml:16:22-75
+21
+22    <permission
+22-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+23        android:name="com.atticaeyenew.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.atticaeyenew.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:10:5-30:19
+29        android:name="com.atticaeyenew.MainApplication"
+29-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:11:7-38
+30        android:allowBackup="false"
+30-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:15:7-34
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\8.8\transforms\ce4f5dec389711446a83e4dc2ffe53e3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:icon="@mipmap/ic_launcher"
+34-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:13:7-41
+35        android:label="Attica Eye"
+35-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-33
+36        android:roundIcon="@mipmap/ic_launcher_round"
+36-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:14:7-52
+37        android:supportsRtl="true"
+37-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:17:7-33
+38        android:theme="@style/AppTheme"
+38-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:16:7-38
+39        android:usesCleartextTraffic="true" >
+39-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\debug\AndroidManifest.xml:6:9-44
+40        <activity
+40-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:18:7-29:18
+41            android:name="com.atticaeyenew.MainActivity"
+41-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:19:9-37
+42            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+42-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:21:9-118
+43            android:exported="true"
+43-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:24:9-32
+44            android:label="Attica Eye"
+44-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:20:9-35
+45            android:launchMode="singleTask"
+45-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:22:9-40
+46            android:windowSoftInputMode="adjustResize" >
+46-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:23:9-51
+47            <intent-filter>
+47-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:25:9-28:25
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:26:13-65
+48-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:26:21-62
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:27:13-73
+50-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:27:23-70
+51            </intent-filter>
+52        </activity>
+53        <activity
+53-->[com.facebook.react:react-android:0.75.3] C:\Users\admin\.gradle\caches\8.8\transforms\73b7edff174c2bc2a9c17a52a73bea25\transformed\react-android-0.75.3-debug\AndroidManifest.xml:19:9-21:40
+54            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+54-->[com.facebook.react:react-android:0.75.3] C:\Users\admin\.gradle\caches\8.8\transforms\73b7edff174c2bc2a9c17a52a73bea25\transformed\react-android-0.75.3-debug\AndroidManifest.xml:20:13-77
+55            android:exported="false" />
+55-->[com.facebook.react:react-android:0.75.3] C:\Users\admin\.gradle\caches\8.8\transforms\73b7edff174c2bc2a9c17a52a73bea25\transformed\react-android-0.75.3-debug\AndroidManifest.xml:21:13-37
+56        <activity
+56-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\348ec8320c896ffe85bdc0c4a363e560\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+57            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+57-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\348ec8320c896ffe85bdc0c4a363e560\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+58            android:exported="false"
+58-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\348ec8320c896ffe85bdc0c4a363e560\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+59            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+59-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\348ec8320c896ffe85bdc0c4a363e560\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+60
+61        <meta-data
+61-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\fca89786eb0470a0a238600d54a8e7d8\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+62            android:name="com.google.android.gms.version"
+62-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\fca89786eb0470a0a238600d54a8e7d8\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+63            android:value="@integer/google_play_services_version" />
+63-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\admin\.gradle\caches\8.8\transforms\fca89786eb0470a0a238600d54a8e7d8\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+64
+65        <provider
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+66            android:name="androidx.startup.InitializationProvider"
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+67            android:authorities="com.atticaeyenew.androidx-startup"
+67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+68            android:exported="false" >
+68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+69            <meta-data
+69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+70                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+71                android:value="androidx.startup" />
+71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\8.8\transforms\7371c517d09178e5b3a6701c452d7bb8\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+72            <meta-data
+72-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\8.8\transforms\801ae63aa7ca7d1656b0fc5b53a5e7d4\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+73                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+73-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\8.8\transforms\801ae63aa7ca7d1656b0fc5b53a5e7d4\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+74                android:value="androidx.startup" />
+74-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\8.8\transforms\801ae63aa7ca7d1656b0fc5b53a5e7d4\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+75        </provider>
+76
+77        <meta-data
+77-->[com.facebook.soloader:soloader:0.11.0] C:\Users\admin\.gradle\caches\8.8\transforms\e24043839ca682ddfdc90d96ffeb4dab\transformed\soloader-0.11.0\AndroidManifest.xml:12:9-14:37
+78            android:name="com.facebook.soloader.enabled"
+78-->[com.facebook.soloader:soloader:0.11.0] C:\Users\admin\.gradle\caches\8.8\transforms\e24043839ca682ddfdc90d96ffeb4dab\transformed\soloader-0.11.0\AndroidManifest.xml:13:13-57
+79            android:value="false" />
+79-->[com.facebook.soloader:soloader:0.11.0] C:\Users\admin\.gradle\caches\8.8\transforms\e24043839ca682ddfdc90d96ffeb4dab\transformed\soloader-0.11.0\AndroidManifest.xml:14:13-34
+80    </application>
+81
+82</manifest>
