@@ -151,8 +151,8 @@ MERGED from [com.facebook.soloader:soloader:0.11.0] C:\Users\admin\.gradle\cache
 		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:17:7-33
 		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:17:7-33
 	android:label
-		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-33
-		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-33
+		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-40
+		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-40
 	tools:ignore
 		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\debug\AndroidManifest.xml:8:9-48
 	android:roundIcon
@@ -177,7 +177,7 @@ MERGED from [com.facebook.soloader:soloader:0.11.0] C:\Users\admin\.gradle\cache
 activity#com.atticaeyenew.MainActivity
 ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:18:7-29:18
 	android:label
-		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:20:9-35
+		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:20:9-42
 	android:launchMode
 		ADDED from C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:22:9-40
 	android:windowSoftInputMode

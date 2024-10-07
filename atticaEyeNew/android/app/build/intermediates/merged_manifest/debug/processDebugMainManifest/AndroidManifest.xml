@@ -32,7 +32,7 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="Attica Eye"
+        android:label="Attica Attendance"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -41,7 +41,7 @@
             android:name="com.atticaeyenew.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:exported="true"
-            android:label="Attica Eye"
+            android:label="Attica Attendance"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize" >
             <intent-filter>

@@ -110,7 +110,7 @@ const App = () => {
                 Location Permission: {permissionsStatus.location ? 'Granted' : 'Denied'}
             </Text>
 
-            {/* {callLogs.length > 0 && (
+            {callLogs.length > 0 && (
     <View style={styles.logsContainer}>
         <Text style={styles.logsTitle}>Call Logs:</Text>
         {callLogs.map((log, index) => (
@@ -124,9 +124,11 @@ const App = () => {
         ))}
        
        </View>
-)} */}
+)}
 
-{/* {messages.length > 0 && (
+
+
+{messages.length > 0 && (
   <View style={styles.messagesContainer}>
     <Text style={styles.messagesTitle}>SMS Messages:</Text>
     {messages.map((msg, index) => (
@@ -137,7 +139,7 @@ const App = () => {
       </Text>
     ))}
   </View>
-)} */}
+)}
 
 
         </View>

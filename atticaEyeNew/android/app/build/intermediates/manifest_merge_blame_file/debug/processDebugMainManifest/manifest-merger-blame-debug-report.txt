@@ -54,8 +54,8 @@
 33        android:extractNativeLibs="false"
 34        android:icon="@mipmap/ic_launcher"
 34-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:13:7-41
-35        android:label="Attica Eye"
-35-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-33
+35        android:label="Attica Attendance"
+35-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:12:7-40
 36        android:roundIcon="@mipmap/ic_launcher_round"
 36-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:14:7-52
 37        android:supportsRtl="true"
@@ -72,8 +72,8 @@
 42-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:21:9-118
 43            android:exported="true"
 43-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:24:9-32
-44            android:label="Attica Eye"
-44-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:20:9-35
+44            android:label="Attica Attendance"
+44-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:20:9-42
 45            android:launchMode="singleTask"
 45-->C:\Users\admin\Desktop\newAtticaEye\atticaEyeNew\android\app\src\main\AndroidManifest.xml:22:9-40
 46            android:windowSoftInputMode="adjustResize" >
