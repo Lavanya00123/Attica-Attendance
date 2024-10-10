@@ -10,46 +10,52 @@ const generateToken = (id) => {
   });
 };
 
-
-
-
-
 exports.registerUser = async (req, res) => {
   const { employeeId, name, mobileNumber, password } = req.body;
 
   try {
-    // Check if user already exists
-    const existingUser = await User.findOne({ employeeId });
-    if (existingUser) return res.status(400).json({ message: 'User already exists' });
+      // Check if user already exists
+      const existingUser = await User.findOne({ employeeId });
+      if (existingUser) return res.status(400).json({ message: 'User already exists' });
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
-    
-    // Create a new user
-    const newUser = new User({ employeeId, name, mobileNumber, password: hashedPassword });
-    await newUser.save();
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+      
+      // Create a new user
+      const newUser = new User({ employeeId, name, mobileNumber, password: hashedPassword });
+      await newUser.save();
 
-    // Create a corresponding employee record
-    const newEmployee = new Employee({
-      employeeId,
-      callLogs: [],    // Initialize empty arrays if needed
-      messages: [],
-      location: {
-        latitude: null, // Or some default value
-        longitude: null,
-        timestamp: null,
+      // Create a corresponding employee record
+      const newEmployee = new Employee({
+          employeeId,
+          name, // Include the name here
+          callLogs: [], // Initialize empty arrays if needed
+          messages: [],
+          location: {
+              latitude: null, // Or some default value
+              longitude: null,
+              timestamp: null,
+          }
+      });
+
+      // Save the employee record
+      try {
+          await newEmployee.save();
+          console.log('New employee created:', newEmployee);
+      } catch (error) {
+          console.error('Error saving employee:', error);
+          return res.status(500).json({ error: 'Failed to create employee record' });
       }
-    });
-    await newEmployee.save();
 
-    // Generate and return token
-    const token = generateToken(newUser._id);
-
-    res.status(201).json({ message: 'User registered successfully', token });
+      // Generate and return token
+      const token = generateToken(newUser._id);
+      res.status(201).json({ message: 'User registered successfully', token });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+      console.error('Registration error:', error);
+      res.status(500).json({ error: error.message });
   }
 };
+
 
 
 
@@ -93,3 +99,5 @@ exports.loginUser = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+

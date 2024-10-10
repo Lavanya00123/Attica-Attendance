@@ -1,23 +1,15 @@
 [
     {
-        "merged": "com.atticaeyenew.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.atticaeyenew.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "com.atticaeyenew.app-debug-35:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.atticaeyenew.app-main-37:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.atticaeyenew.app-debug-35:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.atticaeyenew.app-main-37:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.atticaeyenew.app-debug-35:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.atticaeyenew.app-main-37:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.atticaeyenew.app-debug-35:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.atticaeyenew.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.atticaeyenew.app-debug-35:/mipmap-xhdpi_ic_launcher.png.flat",
@@ -26,54 +18,6 @@
     {
         "merged": "com.atticaeyenew.app-debug-35:/mipmap-mdpi_ic_launcher.png.flat",
         "source": "com.atticaeyenew.app-main-37:/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\drawable_rn_edit_text_material.xml.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\drawable\\rn_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "com.atticaeyenew.app-debug-35:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.atticaeyenew.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-debug-35:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.8\\com.atticaeyenew.app-main-37:\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "com.atticaeyenew.app-debug-35:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.atticaeyenew.app-main-37:/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "com.atticaeyenew.app-debug-35:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.atticaeyenew.app-main-37:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.atticaeyenew.app-debug-35:/mipmap-xxxhdpi_ic_launcher.png.flat",

